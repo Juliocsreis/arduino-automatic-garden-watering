@@ -82,21 +82,19 @@ WSGI_APPLICATION = 'garduino.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'HOST': env('DB_HOST'),
-            'NAME': env('DB_NAME'),
-            'USER': env('DB_USER'),
-            'PORT': env('DB_PORT'),
-            'PASSWORD': env('DB_PASSWORD')
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': env('DB_HOST'),
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PORT': env('DB_PORT'),
+        'PASSWORD': env('DB_PASSWORD')
     }
+}
 
-if not DEBUG:
-     DATABASES['default'] = dj_database_url.config(default="postgresql://USER:PASSWORD@HOST:PORT/NAME",
-                                                  engine='django.db.backends.postgresql_psycopg2', conn_max_age=600)
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 AUTH_USER_MODEL = 'core.User'
 
