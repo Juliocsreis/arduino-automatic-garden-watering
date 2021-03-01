@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b9d2cfa-227e-4075-86e9-926bea6089f6" name="Default Changelist" comment="" />
+    <list default="true" id="5b9d2cfa-227e-4075-86e9-926bea6089f6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jardim/api/viewsets.py" beforeDir="false" afterPath="$PROJECT_DIR$/jardim/api/viewsets.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -225,10 +228,11 @@
       <screen x="-2560" y="0" width="2560" height="1080" />
     </state>
     <state x="-1131" y="176" key="SettingsEditor/0.0.1440.900/-2560.0.2560.1080@-2560.0.2560.1080" timestamp="1614454046525" />
-    <state x="-1999" y="316" key="com.intellij.ide.util.TipDialog" timestamp="1614614029253">
-      <screen x="-2560" y="25" width="2560" height="1055" />
+    <state x="316" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1614635428364">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="-1973" y="364" key="com.intellij.ide.util.TipDialog/0.0.1440.900/-2560.0.2560.1080@-2560.0.2560.1080" timestamp="1614543301447" />
+    <state x="316" y="248" key="com.intellij.ide.util.TipDialog/0.0.1440.900/-2560.0.2560.1080@0.0.1440.900" timestamp="1614635428364" />
     <state x="-1999" y="316" key="com.intellij.ide.util.TipDialog/0.25.1440.791/-2560.25.2560.1055@-2560.25.2560.1055" timestamp="1614614029253" />
     <state x="-2019" y="175" key="refactoring.ChangeSignatureDialog" timestamp="1614627171405">
       <screen x="-2560" y="0" width="2560" height="1080" />

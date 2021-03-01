@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from jardim.models import HumidityData, Watering
 from datetime import timedelta
 from django.utils import timezone
+from django.core.exceptions import ObjectDoesNotExist
 
 
 @api_view(['POST', ])
@@ -37,7 +38,13 @@ def watering_time_for_humidity(humidity):
 
 
 def check_if_soil_needs_watering():
-    last_watering = Watering.objects.latest('time_stamp')
+    global last_watering
+    try:
+        last_watering = Watering.objects.latest('time_stamp')
+    except ObjectDoesNotExist:
+        time = timezone.now() - timedelta(minutes=21)
+        last_watering = Watering.objects.create(time_stamp=time)
+        last_watering.save()
     now = timezone.now()
     next_watering = now + timedelta(minutes=20)
     if next_watering > last_watering.time_stamp:
