@@ -9,7 +9,8 @@ from django.urls import reverse
 class WateringLogic(TestCase):
 
     def test_check_soil_needs_watering_time(self):
-        watering = viewsets.check_last_watering_interval()
+        watering, next_interval = viewsets.check_last_watering_interval()
+        print("next_interval", next_interval)
         self.assertEqual(watering, True)
 
     def test_post_dry_humidity_to_api(self):

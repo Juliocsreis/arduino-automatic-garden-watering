@@ -9,24 +9,26 @@ from django.core.exceptions import ObjectDoesNotExist
 
 @api_view(['POST', ])
 def humidity(self):
-    no_data = 0
+    no_data = -1
     if self.method == "POST":
         print('received post')
         soil_humidity = self.data.get('humidity', no_data)
         print("humidity", soil_humidity)
-        duration = 0
         if soil_humidity != no_data:
             save_humidity_data(soil_humidity)
-            interval = check_last_watering_interval()
+            interval, next_watering = check_last_watering_interval()
             watering = False
+            duration = 0
             if interval:
-                watering = True
                 duration = watering_time_for_humidity(int(soil_humidity))
                 if duration:
+                    watering = True
                     create_watering_obj(pre_humidity=soil_humidity, duration=duration)
-            return Response({"watering": watering, "duration": duration}, status=status.HTTP_200_OK)
+            return Response(
+                {"watering": watering, "duration": duration, "interval": interval, "next_watering": next_watering},
+                status=status.HTTP_200_OK)
         else:
-            return Response()
+            return Response("No data received", status=status.HTTP_400_BAD_REQUEST)
 
 
 def save_humidity_data(soil_humidity):
@@ -44,12 +46,14 @@ def watering_time_for_humidity(humidity):
     else:
         return False
 
+
 def create_watering_obj(pre_humidity, duration):
     watering = Watering()
     watering.time_stamp = timezone.now()
     watering.pre_soil_humidity = pre_humidity
     watering.watering_time_seconds = duration
     watering.save()
+
 
 def check_last_watering_interval():
     global last_watering
@@ -62,8 +66,6 @@ def check_last_watering_interval():
     now = timezone.now()
     next_watering = last_watering.time_stamp + timedelta(minutes=20)
     if now > next_watering:
-        return True
+        return True, next_watering - timedelta(hours=3)
     else:
-        return False
-
-
+        return False, next_watering
