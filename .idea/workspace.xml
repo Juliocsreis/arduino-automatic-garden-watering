@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5b9d2cfa-227e-4075-86e9-926bea6089f6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jardim/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/jardim/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jardim/api/viewsets.py" beforeDir="false" afterPath="$PROJECT_DIR$/jardim/api/viewsets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jardim/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/jardim/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +35,7 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.test keepdb">
     <configuration name="makemigrations" type="PythonConfigurationType" factoryName="Python">
       <module name="garduino" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -129,6 +129,37 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test keepdb" type="PythonConfigurationType" factoryName="Python">
+      <module name="garduino" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="test --keepdb" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python">
       <module name="garduino" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -165,6 +196,7 @@
       <item itemvalue="Python.runserver 0.0.0.0:80" />
       <item itemvalue="Python.migrate" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.test keepdb" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -181,30 +213,31 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1175" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614623939332">
-      <screen x="-2560" y="0" width="2560" height="1080" />
+    <state x="-1175" y="219" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614637953328">
+      <screen x="-2560" y="25" width="2560" height="1055" />
     </state>
     <state x="-1175" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900/-2560.0.2560.1080@-2560.0.2560.1080" timestamp="1614623939332" />
-    <state width="1322" height="84" key="GridCell.Tab.0.bottom" timestamp="1614637361247">
+    <state x="-1175" y="219" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.791/-2560.25.2560.1055@-2560.25.2560.1055" timestamp="1614637953328" />
+    <state width="1613" height="484" key="GridCell.Tab.0.bottom" timestamp="1614637939128">
       <screen x="-2560" y="25" width="2560" height="1055" />
     </state>
     <state width="1537" height="145" key="GridCell.Tab.0.bottom/0.0.1440.900/-2560.0.2560.1080@-2560.0.2560.1080" timestamp="1614629057659" />
-    <state width="1322" height="84" key="GridCell.Tab.0.bottom/0.25.1440.791/-2560.25.2560.1055@-2560.25.2560.1055" timestamp="1614637361247" />
-    <state width="1322" height="84" key="GridCell.Tab.0.center" timestamp="1614637361246">
+    <state width="1613" height="484" key="GridCell.Tab.0.bottom/0.25.1440.791/-2560.25.2560.1055@-2560.25.2560.1055" timestamp="1614637939128" />
+    <state width="1613" height="484" key="GridCell.Tab.0.center" timestamp="1614637939127">
       <screen x="-2560" y="25" width="2560" height="1055" />
     </state>
     <state width="1537" height="145" key="GridCell.Tab.0.center/0.0.1440.900/-2560.0.2560.1080@-2560.0.2560.1080" timestamp="1614629057657" />
-    <state width="1322" height="84" key="GridCell.Tab.0.center/0.25.1440.791/-2560.25.2560.1055@-2560.25.2560.1055" timestamp="1614637361246" />
-    <state width="1322" height="84" key="GridCell.Tab.0.left" timestamp="1614637361245">
+    <state width="1613" height="484" key="GridCell.Tab.0.center/0.25.1440.791/-2560.25.2560.1055@-2560.25.2560.1055" timestamp="1614637939127" />
+    <state width="1613" height="484" key="GridCell.Tab.0.left" timestamp="1614637939126">
       <screen x="-2560" y="25" width="2560" height="1055" />
     </state>
     <state width="1537" height="145" key="GridCell.Tab.0.left/0.0.1440.900/-2560.0.2560.1080@-2560.0.2560.1080" timestamp="1614629057655" />
-    <state width="1322" height="84" key="GridCell.Tab.0.left/0.25.1440.791/-2560.25.2560.1055@-2560.25.2560.1055" timestamp="1614637361245" />
-    <state width="1322" height="84" key="GridCell.Tab.0.right" timestamp="1614637361246">
+    <state width="1613" height="484" key="GridCell.Tab.0.left/0.25.1440.791/-2560.25.2560.1055@-2560.25.2560.1055" timestamp="1614637939126" />
+    <state width="1613" height="484" key="GridCell.Tab.0.right" timestamp="1614637939127">
       <screen x="-2560" y="25" width="2560" height="1055" />
     </state>
     <state width="1537" height="145" key="GridCell.Tab.0.right/0.0.1440.900/-2560.0.2560.1080@-2560.0.2560.1080" timestamp="1614629057658" />
-    <state width="1322" height="84" key="GridCell.Tab.0.right/0.25.1440.791/-2560.25.2560.1055@-2560.25.2560.1055" timestamp="1614637361246" />
+    <state width="1613" height="484" key="GridCell.Tab.0.right/0.25.1440.791/-2560.25.2560.1055@-2560.25.2560.1055" timestamp="1614637939127" />
     <state width="1537" height="439" key="GridCell.Tab.1.bottom" timestamp="1614630876979">
       <screen x="-2560" y="25" width="2560" height="1055" />
     </state>
