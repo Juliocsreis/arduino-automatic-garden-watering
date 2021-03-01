@@ -47,7 +47,7 @@ def check_if_soil_needs_watering():
         last_watering.save()
     now = timezone.now()
     next_watering = now + timedelta(minutes=20)
-    if next_watering < last_watering.time_stamp:
+    if next_watering > last_watering.time_stamp:
         return True
     else:
         return False
