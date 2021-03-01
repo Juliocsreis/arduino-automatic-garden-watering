@@ -7,4 +7,4 @@ class autoNowRead(admin.ModelAdmin):
 
 
 admin.site.register(HumidityData, autoNowRead)
-admin.site.register(Watering, autoNowRead)
+admin.site.register(Watering)

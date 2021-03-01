@@ -16,15 +16,21 @@ def humidity(self):
         print("humidity", soil_humidity)
         duration = 0
         if soil_humidity != no_data:
-            test = HumidityData()
-            test.humidity = soil_humidity
-            test.save()
-            watering = check_if_soil_needs_watering()
-            if watering:
+            save_humidity_data(soil_humidity)
+            interval = check_if_soil_needs_watering()
+            watering = False
+            if interval:
+                watering = True
                 duration = watering_time_for_humidity(int(soil_humidity))
+                create_watering_obj(pre_humidity=soil_humidity, duration=duration)
             return Response({"watering": watering, "duration": duration}, status=status.HTTP_200_OK)
         else:
             return Response()
+
+def save_humidity_data(soil_humidity):
+    humidity_data = HumidityData()
+    humidity_data.humidity = soil_humidity
+    humidity_data.save()
 
 
 def watering_time_for_humidity(humidity):
@@ -36,6 +42,12 @@ def watering_time_for_humidity(humidity):
     else:
         return False
 
+def create_watering_obj(pre_humidity, duration):
+    watering = Watering()
+    watering.time_stamp = timezone.now()
+    watering.pre_soil_humidity = pre_humidity
+    watering.watering_time_seconds = duration
+    watering.save()
 
 def check_if_soil_needs_watering():
     global last_watering
