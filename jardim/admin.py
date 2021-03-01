@@ -1,9 +1,10 @@
 from django.contrib import admin
-from .models import esp8266Test
+from .models import HumidityData, Watering
 
 
-class espAdmin(admin.ModelAdmin):
+class autoNowRead(admin.ModelAdmin):
     readonly_fields = ('time_stamp',)
 
 
-admin.site.register(esp8266Test, espAdmin)
+admin.site.register(HumidityData, autoNowRead)
+admin.site.register(Watering, autoNowRead)

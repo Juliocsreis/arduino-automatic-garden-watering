@@ -19,5 +19,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    path('api/jardim/', include('jardim.api.urls')),
+    path('api/jardim/', include('jardim.api.urls', namespace='jardim_api')),
 ]

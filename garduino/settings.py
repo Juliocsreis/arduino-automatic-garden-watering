@@ -30,7 +30,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get('DEBUG', 0))
 
-ALLOWED_HOSTS = ['0.0.0.0:80', 'garduino-galtec.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'garduino-galtec.herokuapp.com']
 
 
 # Application definition
