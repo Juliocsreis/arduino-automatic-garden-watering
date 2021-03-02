@@ -20,8 +20,8 @@ def humidity(self):
             duration = 0
             if interval:
                 duration = watering_time_for_humidity(int(soil_humidity))
+                save_humidity_data(soil_humidity)
                 if duration:
-                    save_humidity_data(soil_humidity)
                     watering = True
                     create_watering_obj(pre_humidity=soil_humidity, duration=duration)
             return Response(
