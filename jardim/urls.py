@@ -5,5 +5,5 @@ from . import views
 app_name = 'jardim'
 
 urlpatterns = [
-    # path('esp8266/', ,
+    path("dashboard/", views.dashboardView, name="dashboardView")
 ]

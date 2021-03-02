@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="col-md-auto my-5 text-center">
+        <h1 class="text-success my-5">Garduino - Ap Julio</h1>
+        <div class="card">
+            <h4 class="text-primary">
+                Umidade do Solo
+            </h4>
+            <h3 class="text-secondary ">
+                {{ humidity }}
+            </h3>
+            <small class="text-info"> Medição: {{ time }}</small>
+            <div>
+                <span> Escala de 0 a 1024 </span>
+            </div>
+            <div>
+                <span> 0 = Totalmente molhado </span>
+            </div>
+            <div>
+                <span class="sm"> 1024 = Totalmente seco </span>
+            </div>
+            <hr>
+            <h4 class="text-success">
+                Ultima Rega
+            </h4>
+            <h3 class="text-secondary ">
+                {{ last_watering_time }}
+            </h3>
+            <h3 class="text-success my-2">
+                Humidade inicio da regagem
+            </h3>
+            <h4 class="text-secondary">
+                {{ last_watering_pre_humidity }}
+            </h4>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
